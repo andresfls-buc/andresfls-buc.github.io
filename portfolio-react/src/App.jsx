@@ -1,51 +1,98 @@
-import React from 'react';
+import myCv from './アンドレス履歴書.pdf'; // Importing the CV file
+import { useTranslation } from 'react-i18next';
+import { useMemo } from 'react'; 
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { IoMail } from 'react-icons/io5';
+import { FiDownload } from 'react-icons/fi'; // Added the Download icon
 import './index.css';
 
 function App() {
-  // Lista expandida de lenguajes y herramientas relevantes
+  const { t, i18n } = useTranslation();
+
+  const currentLang = i18n.language;
+
   const skills = [
     'Python', 'JavaScript', 'React.js', 'Django', 
     'SQL (MySQL/PostgreSQL)', 'Docker', 'Git & GitHub', 
     'Linux (Ubuntu/Debian)', 'REST APIs', 'HTML5 & CSS3', 
     'Node.js', 'PyTorch', 'Bootstrap', 'AWS Basics', 'Cybersecurity '
   ];
- // Datos de idiomas con niveles y porcentajes
-  const languages = [
-  { name: 'Spanish', level: 'Native', percent: '100%' },
-  { name: 'Japanese', level: 'N3 (Daily Conversation)', percent: '60%' },
-  { name: 'English', level: 'B2 (Professional)', percent: '75%' }
-];
+
+  const languages = useMemo(() => [
+    { name: t('lang_names.Spanish'), level: t('levels.native'), percent: '100%' },
+    { name: t('lang_names.Japanese'), level: t('levels.n3'), percent: '60%' },
+    { name: t('lang_names.English'), level: t('levels.b2'), percent: '75%' }
+  ], [t, currentLang]); 
+
+  const changeLanguage = async (lng) => {
+    await i18n.changeLanguage(lng);
+  };
 
   return (
     <div className="main-container">
+      {/* LANGUAGE SWITCHER */}
+      <div className="language-controls">
+        <button 
+          className={`lang-btn ${currentLang === 'en' ? 'active' : ''}`} 
+          onClick={() => changeLanguage('en')}
+        >
+          EN
+        </button>
+        <button 
+          className={`lang-btn ${currentLang === 'es' ? 'active' : ''}`} 
+          onClick={() => changeLanguage('es')}
+        >
+          ES
+        </button>
+        <button 
+          className={`lang-btn ${currentLang === 'ja' ? 'active' : ''}`} 
+          onClick={() => changeLanguage('ja')}
+        >
+          日本語
+        </button>
+      </div>
+
       {/* HEADER */}
       <header style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <img src="https://avatars.githubusercontent.com/u/174173495?s=400&u=ecd4d17afd905270c660b5c139f913ecbfaeeadf&v=4" className="profile-img" alt="Andres" />
+        <img src="https://avatars.githubusercontent.com/u/174173495?s=400" className="profile-img" alt="Andres" />
         <h1 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#ffffff' }}>
           Andrés Landazábal
         </h1>
-        <p style={{ color: '#94a3b8', fontSize: '1.1rem' }}> AI | Cybersecurity | Cloud Engineer | Colombian</p>
+        <p key={`title-${currentLang}`} style={{ color: '#94a3b8', fontSize: '1.1rem', marginBottom: '1.5rem' }}>
+          {t('title')}
+        </p>
+
+        {/* NEW: DOWNLOAD CV BUTTON */}
+        <div style={{ marginTop: '1.5rem' }}>
+          <a 
+            key={`cv-${currentLang}`}
+            href={myCv} // Using the imported CV file
+            download="アンドレス履歴書.pdf"
+            className="cv-download-btn"
+          >
+            <FiDownload style={{ marginRight: '8px' }} />
+            {t('download_cv')}
+          </a>
+        </div>
       </header>
 
-      {/* SECCIÓN: SOBRE MÍ */}
+      {/* SECTION: ABOUT ME */}
       <section>
-        <h3>About Me</h3>
-        <p style={{ lineHeight: '1.6', color: '#cbd5e1' }}>
-          I am a Systems Engineer living in Japan with over five years of professional experience designing, building, and securing technology solutions. I specialize in cybersecurity, cloud engineering, and artificial intelligence, with strong expertise in secure architectures, cloud infrastructure, automation, and data protection. I have an analytical mindset and a strong problem-solving approach, allowing me to deliver scalable, reliable, and secure systems. I adapt quickly to complex technical environments and collaborate effectively with multidisciplinary teams to create innovative solutions aligned with business goals.
+        <h3 key={`about-h3-${currentLang}`}>{t('about_me_h3')}</h3>
+        <p key={`about-p-${currentLang}`} style={{ lineHeight: '1.6', color: '#cbd5e1' }}>
+          {t('about_me_p')}
         </p>
       </section>
 
-      {/* SECCIÓN: STACK TECNOLÓGICO INTERACTIVO */}
+      {/* SECTION: STACK */}
       <section>
-        <h3>Programming Stack</h3>
+        <h3 key={`stack-h3-${currentLang}`}>{t('stack_h3')}</h3>
         <div className="skills-container">
           {skills.map((skill, index) => (
             <span 
-              key={skill} 
+              key={`${skill}-${currentLang}`} 
               className="skill-tag" 
-              style={{ animationDelay: `${index * 0.1}s` }} // Efecto de cascada
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               {skill}
             </span>
@@ -53,53 +100,58 @@ function App() {
         </div>
       </section>
 
-      {/* SECCIÓN: BARRAS DE HABILIDADES DE LENGUAJES (ACTUALIZADA) */}
-
+      {/* SECTION: LANGUAGES */}
       <section>
-  <h3>Languages</h3>
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-    {languages.map((lang) => (
-      <div key={lang.name}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-          <span style={{ fontWeight: '600', color: '#ffffff' }}>{lang.name}</span>
-          <span style={{ color: 'var(--accent-blue)', fontSize: '0.85rem' }}>{lang.level}</span>
+        <h3 key={`langs-h3-${currentLang}`}>{t('languages_h3')}</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          {languages.map((lang) => (
+            <div key={`${lang.name}-${currentLang}`}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <span style={{ fontWeight: '600', color: '#ffffff' }}>{lang.name}</span>
+                <span style={{ color: 'var(--accent-blue)', fontSize: '0.85rem' }}>{lang.level}</span>
+              </div>
+              <div className="progress-bg">
+                <div className="progress-fill" style={{ width: lang.percent }}></div>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="progress-bg">
-          <div 
-            className="progress-fill" 
-            style={{ width: lang.percent }}
-          ></div>
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
+      </section>
 
- {/* SECCIÓN: LINKS / GITHUB (ACTUALIZADA) */}
+      {/* SECTION: CONNECT */}
       <section>
-        <h3>Connect & Projects</h3>
+        <h3 key={`connect-h3-${currentLang}`}>{t('connect_h3')}</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-          
-          <a href="https://github.com/andresfls-buc" target="_blank" rel="noreferrer" className="btn-link">
-            <FaGithub style={{ marginRight: '10px', fontSize: '1.2rem' }} /> 
-            GitHub Repositories
+          <a 
+            key={`github-link-${currentLang}`}
+            href="https://github.com/andresfls-buc" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="btn-link"
+          >
+            <FaGithub style={{ marginRight: '10px', fontSize: '1.2rem' }} /> {t('github_btn')}
           </a>
-
-          <a href="https://www.linkedin.com/in/andres-felipe-landazabal-sanmiguel-79393131b/" target="_blank" rel="noreferrer" className="btn-link">
-            <FaLinkedin style={{ marginRight: '10px', fontSize: '1.2rem', color: '#0077b5' }} /> 
-            LinkedIn Profile
+          <a 
+            key={`linkedin-link-${currentLang}`}
+            href="https://www.linkedin.com/in/andres-felipe-landazabal-sanmiguel" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="btn-link"
+          >
+            <FaLinkedin style={{ marginRight: '10px', fontSize: '1.2rem', color: '#0077b5' }} /> {t('linkedin_btn')}
           </a>
-
-          <a href="mailto:andresflsxx@gmail.com" className="btn-link">
-            <IoMail style={{ marginRight: '10px', fontSize: '1.2rem' }} /> 
-            Contact Email
+          <a 
+            key={`mail-link-${currentLang}`}
+            href="mailto:andresflsxx@gmail.com" 
+            className="btn-link"
+          >
+            <IoMail style={{ marginRight: '10px', fontSize: '1.2rem' }} /> {t('contact_btn')}
           </a>
-
         </div>
       </section>
 
       <footer style={{ textAlign: 'center', color: '#475569', fontSize: '0.8rem', marginTop: '4rem' }}>
-        © {new Date().getFullYear()} | Engineered by Andrés Landazábal
+        © {new Date().getFullYear()} | {t('footer')}
       </footer>
     </div>
   );

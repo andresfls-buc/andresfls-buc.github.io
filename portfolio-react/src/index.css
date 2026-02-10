@@ -149,3 +149,75 @@ section {
 section span {
   color: #ffffff;
 }
+
+/* Container for the language switcher */
+.language-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 20px;
+  position: absolute; /* Keeps it top right */
+  top: 0;
+  right: 0;
+}
+
+/* Base button style */
+.lang-btn {
+  background: rgba(30, 41, 59, 0.5); /* Semi-transparent slate */
+  border: 1px solid #334155;
+  color: #94a3b8;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Hover effect */
+.lang-btn:hover {
+  border-color: #3b82f6; /* Your accent blue */
+  color: #ffffff;
+}
+
+/* Active language style */
+.lang-btn.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Specific adjustment for Japanese text readability */
+[lang="ja"] p, [lang="ja"] span {
+  line-height: 1.8; /* More vertical space for Kanji */
+  letter-spacing: 0.02em;
+}
+
+[lang="ja"] h3 {
+  letter-spacing: 1px; /* Japanese doesn't need as much letter-spacing as English */
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--accent-blue);
+  color: var(--accent-blue);
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cv-download-btn:hover {
+  background: var(--accent-blue);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}

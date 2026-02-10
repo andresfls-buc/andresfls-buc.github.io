@@ -1,0 +1,23 @@
+{
+  "title": "IA | Ciberseguridad | Ingeniero Cloud | Colombiano",
+  "about_me_h3": "Sobre Mí",
+  "about_me_p": "Soy un Ingeniero de Sistemas que vive en Japón con más de cinco años de experiencia profesional en el diseño, construcción y aseguramiento de soluciones tecnológicas. Me especializo en ciberseguridad, ingeniería en la nube e inteligencia artificial, con sólida experiencia en arquitecturas seguras, infraestructura en la nube, automatización y protección de datos. Poseo una mentalidad analítica y un enfoque orientado a la resolución de problemas, lo que me permite entregar sistemas escalables, confiables y seguros. Me adapto rápidamente a entornos técnicos complejos y colaboro eficazmente con equipos multidisciplinarios para crear soluciones innovadoras alineadas con los objetivos del negocio.",
+  "stack_h3": "Stack de Programación",
+  "languages_h3": "Idiomas",
+  "connect_h3": "Conectar y Proyectos",
+  "github_btn": "Repositorios de GitHub",
+  "linkedin_btn": "Perfil de LinkedIn",
+  "contact_btn": "Correo de Contacto",
+  "footer": "Diseñado por Andrés Landazábal",
+  "download_cv": "Descargar CV",
+  "lang_names": {
+    "Spanish": "Español",
+    "Japanese": "Japonés",
+    "English": "Inglés"
+  },
+  "levels": {
+    "native": "Nativo",
+    "n3": "N3 (Conversación Diaria)",
+    "b2": "B2 (Profesional)"
+  }
+}

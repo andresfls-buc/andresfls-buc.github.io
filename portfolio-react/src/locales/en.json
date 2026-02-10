@@ -1,0 +1,23 @@
+{
+  "title": "AI | Cybersecurity | Cloud Engineer | Colombian",
+  "about_me_h3": "About Me",
+  "about_me_p": "I am a Systems Engineer living in Japan with over five years of professional experience designing, building, and securing technology solutions. I specialize in cybersecurity, cloud engineering, and artificial intelligence, with strong expertise in secure architectures, cloud infrastructure, automation, and data protection. I have an analytical mindset and a strong problem-solving approach, allowing me to deliver scalable, reliable, and secure systems. I adapt quickly to complex technical environments and collaborate effectively with multidisciplinary teams to create innovative solutions aligned with business goals.",
+  "stack_h3": "Programming Stack",
+  "languages_h3": "Languages",
+  "connect_h3": "Connect & Projects",
+  "github_btn": "GitHub Repositories",
+  "linkedin_btn": "LinkedIn Profile",
+  "contact_btn": "Contact Email",
+  "footer": "Engineered by Andrés Landazábal",
+  "download_cv": "Download CV",
+  "lang_names": {
+    "Spanish": "Spanish",
+    "Japanese": "Japanese",
+    "English": "English"
+  },
+  "levels": {
+    "native": "Native",
+    "n3": "N3 (Daily Conversation)",
+    "b2": "B2 (Professional)"
+  }
+}
