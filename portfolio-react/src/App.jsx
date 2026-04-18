@@ -1,7 +1,7 @@
 import myCv from './アンドレス履歴書.pdf'; // Importing the CV file
 import { useTranslation } from 'react-i18next';
-import { useMemo } from 'react'; 
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useMemo, useState, useEffect } from 'react';
+import { FaGithub, FaLinkedin, FaStar, FaCodeBranch } from 'react-icons/fa';
 import { IoMail } from 'react-icons/io5';
 import { FiDownload } from 'react-icons/fi'; // Added the Download icon
 import './index.css';
@@ -23,6 +23,26 @@ function App() {
     { name: t('lang_names.Japanese'), level: t('levels.n3'), percent: '60%' },
     { name: t('lang_names.English'), level: t('levels.b2'), percent: '75%' }
   ], [t, currentLang]); 
+
+  const [repos, setRepos] = useState([]);
+  const [reposLoading, setReposLoading] = useState(true);
+  const [reposError, setReposError] = useState(false);
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/andresfls-buc/repos?sort=updated&per_page=6&type=public')
+      .then(res => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
+      .then(data => {
+        setRepos(data.filter(r => !r.fork));
+        setReposLoading(false);
+      })
+      .catch(() => {
+        setReposError(true);
+        setReposLoading(false);
+      });
+  }, []);
 
   const changeLanguage = async (lng) => {
     await i18n.changeLanguage(lng);
@@ -116,6 +136,57 @@ function App() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* SECTION: PROJECTS */}
+      <section>
+        <h3 key={`projects-h3-${currentLang}`}>{t('projects_h3')}</h3>
+        {reposLoading && (
+          <p style={{ color: 'var(--text-dim)', textAlign: 'center' }}>{t('projects_loading')}</p>
+        )}
+        {reposError && (
+          <p style={{ color: 'var(--text-dim)', textAlign: 'center' }}>{t('projects_error')}</p>
+        )}
+        {!reposLoading && !reposError && (
+          <div className="projects-grid">
+            {repos.map(repo => (
+              <a
+                key={repo.id}
+                href={repo.html_url}
+                target="_blank"
+                rel="noreferrer"
+                className="project-card"
+              >
+                <div className="project-img-wrap">
+                  <img
+                    src={`https://opengraph.githubassets.com/1/andresfls-buc/${repo.name}`}
+                    alt={repo.name}
+                    className="project-img"
+                  />
+                </div>
+                <div className="project-info">
+                  <span className="project-name">{repo.name}</span>
+                  {repo.description && (
+                    <p className="project-desc">{repo.description}</p>
+                  )}
+                  <div className="project-meta">
+                    {repo.language && (
+                      <span className="project-lang">{repo.language}</span>
+                    )}
+                    <span className="project-stat">
+                      <FaStar style={{ marginRight: '4px', fontSize: '0.75rem' }} />
+                      {repo.stargazers_count}
+                    </span>
+                    <span className="project-stat">
+                      <FaCodeBranch style={{ marginRight: '4px', fontSize: '0.75rem' }} />
+                      {repo.forks_count}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* SECTION: CONNECT */}
