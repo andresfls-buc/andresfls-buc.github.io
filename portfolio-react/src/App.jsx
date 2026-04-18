@@ -157,13 +157,6 @@ function App() {
                 rel="noreferrer"
                 className="project-card"
               >
-                <div className="project-img-wrap">
-                  <img
-                    src={`https://opengraph.githubassets.com/1/andresfls-buc/${repo.name}`}
-                    alt={repo.name}
-                    className="project-img"
-                  />
-                </div>
                 <div className="project-info">
                   <span className="project-name">{repo.name}</span>
                   {repo.description && (
