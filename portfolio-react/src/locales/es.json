@@ -1,10 +1,10 @@
 {
-  "title": "IA | Ciberseguridad | Ingeniero Cloud | Colombiano",
+  "title": "Ingeniero de IA | Modelos fundacionales | Preentrenamiento y postentrenamiento",
   "about_me_h3": "Sobre Mí",
-  "about_me_p": "Soy un Ingeniero de Sistemas que vive en Japón con más de cinco años de experiencia profesional en el diseño, construcción y aseguramiento de soluciones tecnológicas. Me especializo en ciberseguridad, ingeniería en la nube e inteligencia artificial, con sólida experiencia en arquitecturas seguras, infraestructura en la nube, automatización y protección de datos. Poseo una mentalidad analítica y un enfoque orientado a la resolución de problemas, lo que me permite entregar sistemas escalables, confiables y seguros. Me adapto rápidamente a entornos técnicos complejos y colaboro eficazmente con equipos multidisciplinarios para crear soluciones innovadoras alineadas con los objetivos del negocio.",
+  "about_me_p": "Soy un ingeniero de IA colombiano que vive en Japón, especializado en el preentrenamiento y postentrenamiento de modelos fundacionales. Me atrae el trabajo que hay detrás del modelo: cómo aprende, de dónde surgen sus capacidades y qué hace falta para convertirlas en un comportamiento útil.\n\nMi enfoque abarca dos retos estrechamente relacionados: construir bases sólidas mediante el preentrenamiento y perfeccionar el comportamiento del modelo mediante el postentrenamiento. Lo que más me interesa es la conexión entre ambos: cómo las decisiones tomadas durante el entrenamiento se reflejan en las respuestas de un modelo, en sus errores y en los límites de lo que puede hacer.\n\nPara mí, una demo convincente es el comienzo de la conversación. Quiero entender por qué algo funciona, dónde falla y cómo mejorarlo. Esa curiosidad me impulsa a seguir construyendo, experimentando y profundizando en los sistemas que hacen posible la IA actual.",
   "stack_h3": "Stack de Programación",
   "languages_h3": "Idiomas",
-  "projects_h3": "Proyectos Recientes",
+  "projects_h3": "Proyectos fijados",
   "projects_loading": "Cargando repositorios...",
   "projects_error": "No se pudieron cargar los repositorios.",
   "connect_h3": "Conectar y Proyectos",
@@ -22,5 +22,12 @@
     "native": "Nativo",
     "n3": "N3 (Conversación Diaria)",
     "b2": "B2 (Profesional)"
+  },
+  "hero": {
+    "eyebrow": "Ingeniero · Creador · Desde Japón",
+    "explore": "Explora mi trabajo",
+    "portrait_alt": "Retrato pixel art de Andrés con camisa blanca y chaleco beige, con árboles al fondo.",
+    "pause": "Pausar parpadeo",
+    "resume": "Reanudar parpadeo"
   }
 }

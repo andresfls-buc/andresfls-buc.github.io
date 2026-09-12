@@ -308,3 +308,36 @@ section span {
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
   transform: translateY(-2px);
 }
+/* The playable introduction flows into the portfolio. */
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{background:linear-gradient(180deg,#0d1422 0%,#101b2a 55%,#0b1420 100%)}
+.portfolio-hero{max-width:1280px;margin:0 auto;padding:100px 32px 34px}
+.hero-heading{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:32px}
+.hero-eyebrow{font:11px ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase;color:#9bbdbf;margin:0 0 16px}
+.hero-heading h1{font-size:clamp(30px,4.5vw,64px);font-weight:650;letter-spacing:-.055em;line-height:1.05;margin:0 0 15px}
+.hero-heading h1 span{color:#a8d7c6}.hero-role{font-size:clamp(12px,1.2vw,16px);color:#a9bbca;margin:0;line-height:1.6}
+.hero-heading .cv-download-btn{flex-shrink:0;gap:9px;color:#c9e6df;border-color:#507575;border-radius:4px;font-size:12px}
+.hero-world{overflow:hidden;border:1px solid #3a5364;box-shadow:0 20px 70px #0004;background:#0d1422}
+.hero-game{display:block;width:100%;height:calc(min(100vw - 66px,1280px) * .5625 + 70px);border:0;color-scheme:dark}
+.hero-caption{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:20px;font-size:12px;color:#90a8b6;line-height:1.7}
+.hero-caption p{margin:0}.hero-caption a{display:inline-flex;align-items:center;gap:12px;flex-shrink:0;color:#d8eeea;text-decoration:none;border-bottom:1px solid #688d91;padding-bottom:3px}
+.hero-caption a:focus-visible,.cv-download-btn:focus-visible{outline:2px solid #e8bb79;outline-offset:5px}
+.main-container{padding-top:35px}.language-controls{z-index:2;padding:24px 32px}.lang-btn.active{background:#355963;border-color:#699296;box-shadow:none}
+.scroll-reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}.scroll-reveal.is-visible{opacity:1;transform:none}
+@media(max-width:640px){.portfolio-hero{padding:88px 14px 24px}.hero-heading{display:block;margin-bottom:24px}.hero-heading .cv-download-btn{margin-top:20px}.hero-eyebrow{font-size:9px;letter-spacing:.12em}.hero-game{height:calc((100vw - 30px)*.5625 + 70px)}.hero-caption{align-items:flex-start;gap:16px;font-size:11px}.hero-caption p{max-width:56%}.main-container{padding:24px 14px}.main-container>section{padding:24px}.language-controls{padding:22px 14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scroll-reveal{opacity:1;transform:none;transition:none}.skill-tag,.progress-fill{animation:none}.skill-tag,.btn-link,.project-card,.cv-download-btn{transition:none}}
+
+.portrait-hero{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:80px;max-width:1120px;padding-top:112px;padding-bottom:72px;min-height:78svh}
+.portrait-copy h1{font-size:clamp(44px,6.3vw,86px);font-weight:650;line-height:1.02;letter-spacing:-.06em;margin:22px 0 25px}
+.portrait-copy h1 span{color:#c7ad83}.portrait-copy .hero-role{max-width:390px;line-height:1.9}
+.portrait-actions{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:34px}
+.portrait-explore{display:inline-flex;align-items:center;gap:12px;color:#e6d2b2;text-decoration:none;font-size:14px;border-bottom:1px solid #9b8565;padding:10px 0}
+.portrait-actions .cv-download-btn{display:inline-flex;gap:8px;color:#cad8d3;border-color:#526c68;border-radius:4px;font-size:12px;padding:12px 16px}
+.portrait-frame{position:relative;width:100%;max-width:384px;margin:0;justify-self:end;background:#25362c;box-shadow:16px 16px 0 #25332e;border:1px solid #718073}
+.portrait-frame img,.portrait-frame canvas{display:block;width:100%;height:auto;image-rendering:pixelated}
+.portrait-frame canvas{position:absolute;inset:0;height:100%}
+.portrait-toggle{position:absolute;right:10px;bottom:10px;width:36px;height:36px;border:1px solid #b5c1b780;background:#16221ed9;color:#f1e5d2;display:grid;place-items:center;cursor:pointer;z-index:1}
+.portrait-toggle:focus-visible,.portrait-explore:focus-visible{outline:2px solid #e8bb79;outline-offset:4px}
+@media(max-width:760px){.portrait-hero{gap:40px;grid-template-columns:1fr;min-height:0;padding-top:100px;padding-bottom:60px}.portrait-copy h1{font-size:58px}.portrait-frame{justify-self:center;max-width:320px;width:calc(100% - 16px)}.portrait-actions{gap:18px;margin-top:24px}.portrait-copy .hero-role{max-width:100%}}
+
+.about-copy p{line-height:1.85;color:#cbd5e1;margin-bottom:1.2rem}.about-copy p:last-child{margin-bottom:0}

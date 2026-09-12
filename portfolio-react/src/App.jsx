@@ -1,9 +1,10 @@
 import myCv from './アンドレス履歴書.pdf'; // Importing the CV file
 import { useTranslation } from 'react-i18next';
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaStar, FaCodeBranch } from 'react-icons/fa';
 import { IoMail } from 'react-icons/io5';
-import { FiDownload } from 'react-icons/fi'; // Added the Download icon
+import PortraitHero from './components/PortraitHero';
+import repos from './data/pinned-projects.json';
 import './index.css';
 
 function App() {
@@ -22,26 +23,16 @@ function App() {
     { name: t('lang_names.Spanish'), level: t('levels.native'), percent: '100%' },
     { name: t('lang_names.Japanese'), level: t('levels.n3'), percent: '60%' },
     { name: t('lang_names.English'), level: t('levels.b2'), percent: '75%' }
-  ], [t, currentLang]); 
-
-  const [repos, setRepos] = useState([]);
-  const [reposLoading, setReposLoading] = useState(true);
-  const [reposError, setReposError] = useState(false);
+  ], [t]);
 
   useEffect(() => {
-    fetch('https://api.github.com/users/andresfls-buc/repos?sort=updated&per_page=6&type=public')
-      .then(res => {
-        if (!res.ok) throw new Error();
-        return res.json();
-      })
-      .then(data => {
-        setRepos(data.filter(r => !r.fork));
-        setReposLoading(false);
-      })
-      .catch(() => {
-        setReposError(true);
-        setReposLoading(false);
-      });
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const sections = document.querySelectorAll('.main-container > section');
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+    }, { threshold: .08 });
+    sections.forEach(section => { section.classList.add('scroll-reveal'); observer.observe(section); });
+    return () => { observer.disconnect(); sections.forEach(section => section.classList.remove('scroll-reveal')); };
   }, []);
 
   const changeLanguage = async (lng) => {
@@ -49,7 +40,7 @@ function App() {
   };
 
   return (
-    <div className="main-container">
+    <div className="portfolio">
       {/* LANGUAGE SWITCHER */}
       <div className="language-controls">
         <button 
@@ -72,36 +63,14 @@ function App() {
         </button>
       </div>
 
-      {/* HEADER */}
-      <header style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <img src="https://avatars.githubusercontent.com/u/174173495?s=400" className="profile-img" alt="Andres" />
-        <h1 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#ffffff' }}>
-          Andrés Landazábal
-        </h1>
-        <p key={`title-${currentLang}`} style={{ color: '#94a3b8', fontSize: '1.1rem', marginBottom: '1.5rem' }}>
-          {t('title')}
-        </p>
-
-        {/* NEW: DOWNLOAD CV BUTTON */}
-        <div style={{ marginTop: '1.5rem' }}>
-          <a 
-            key={`cv-${currentLang}`}
-            href={myCv} // Using the imported CV file
-            download="アンドレス履歴書.pdf"
-            className="cv-download-btn"
-          >
-            <FiDownload style={{ marginRight: '8px' }} />
-            {t('download_cv')}
-          </a>
-        </div>
-      </header>
-
+      <PortraitHero cv={myCv} />
+      <main className="main-container" id="portfolio">
       {/* SECTION: ABOUT ME */}
-      <section>
+      <section id="about">
         <h3 key={`about-h3-${currentLang}`}>{t('about_me_h3')}</h3>
-        <p key={`about-p-${currentLang}`} style={{ lineHeight: '1.6', color: '#cbd5e1' }}>
-          {t('about_me_p')}
-        </p>
+        <div key={`about-p-${currentLang}`} className="about-copy">
+          {t('about_me_p').split('\n\n').map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+        </div>
       </section>
 
       {/* SECTION: STACK */}
@@ -139,15 +108,8 @@ function App() {
       </section>
 
       {/* SECTION: PROJECTS */}
-      <section>
+      <section id="projects">
         <h3 key={`projects-h3-${currentLang}`}>{t('projects_h3')}</h3>
-        {reposLoading && (
-          <p style={{ color: 'var(--text-dim)', textAlign: 'center' }}>{t('projects_loading')}</p>
-        )}
-        {reposError && (
-          <p style={{ color: 'var(--text-dim)', textAlign: 'center' }}>{t('projects_error')}</p>
-        )}
-        {!reposLoading && !reposError && (
           <div className="projects-grid">
             {repos.map(repo => (
               <a
@@ -179,7 +141,6 @@ function App() {
               </a>
             ))}
           </div>
-        )}
       </section>
 
       {/* SECTION: CONNECT */}
@@ -217,6 +178,7 @@ function App() {
       <footer style={{ textAlign: 'center', color: '#475569', fontSize: '0.8rem', marginTop: '4rem' }}>
         © {new Date().getFullYear()} | {t('footer')}
       </footer>
+      </main>
     </div>
   );
 }

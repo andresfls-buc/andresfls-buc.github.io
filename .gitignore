@@ -1,0 +1,7 @@
+# Retired local experiments and private photo references.
+/artifacts/*
+!/artifacts/portrait/
+/artifacts/portrait/reference.png
+/artifacts/portrait/andres-portrait.aseprite
+/artifacts/portrait/closed-preview.png
+.DS_Store

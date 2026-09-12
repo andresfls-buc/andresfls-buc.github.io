@@ -14,3 +14,7 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Pinned projects
+
+The project cards use `src/data/pinned-projects.json`, a snapshot of the public GitHub profile pins in display order. After changing pins on GitHub, run `npm run sync:projects` and `npm run build` to refresh the site. No GitHub token is shipped to the browser.

@@ -1,10 +1,10 @@
 {
-  "title": "AI | Cybersecurity | Cloud Engineer | Colombian",
+  "title": "AI Engineer | Foundation Models | Pre-training & Post-training",
   "about_me_h3": "About Me",
-  "about_me_p": "I am a Systems Engineer living in Japan with over five years of professional experience designing, building, and securing technology solutions. I specialize in cybersecurity, cloud engineering, and artificial intelligence, with strong expertise in secure architectures, cloud infrastructure, automation, and data protection. I have an analytical mindset and a strong problem-solving approach, allowing me to deliver scalable, reliable, and secure systems. I adapt quickly to complex technical environments and collaborate effectively with multidisciplinary teams to create innovative solutions aligned with business goals.",
+  "about_me_p": "I’m a Colombian AI engineer based in Japan, specializing in the pre-training and post-training of foundation models. I’m drawn to the work behind the model: how it learns, where its capabilities come from, and what it takes to turn those capabilities into useful behavior.\n\nMy focus spans two closely connected challenges: building strong foundations through pre-training, and refining model behavior through post-training. What interests me most is the connection between them—how choices made during training show up in the answers a model gives, the mistakes it makes, and the limits of what it can do.\n\nFor me, a compelling demo is the beginning of the conversation. I want to understand why something works, where it breaks, and how to make it better. That curiosity is what keeps me building, experimenting, and digging deeper into the systems behind modern AI.",
   "stack_h3": "Programming Stack",
   "languages_h3": "Languages",
-  "projects_h3": "Recent Projects",
+  "projects_h3": "Pinned Projects",
   "projects_loading": "Loading repositories...",
   "projects_error": "Could not load repositories.",
   "connect_h3": "Connect & Projects",
@@ -22,5 +22,12 @@
     "native": "Native",
     "n3": "N3 (Daily Conversation)",
     "b2": "B2 (Professional)"
+  },
+  "hero": {
+    "eyebrow": "Engineer · Creator · Based in Japan",
+    "explore": "Explore my work",
+    "portrait_alt": "Pixel-art portrait of Andrés in a white shirt and tan vest, with trees behind him.",
+    "pause": "Pause blinking",
+    "resume": "Resume blinking"
   }
 }

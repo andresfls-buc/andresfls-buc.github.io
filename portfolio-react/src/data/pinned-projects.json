@@ -1,0 +1,47 @@
+[
+  {
+    "id": "/andresfls-buc/hitomils-website",
+    "name": "hitomils-website",
+    "html_url": "https://github.com/andresfls-buc/hitomils-website",
+    "description": "",
+    "language": "TypeScript",
+    "stargazers_count": "1",
+    "forks_count": "0"
+  },
+  {
+    "id": "/andresfls-buc/my-store-data",
+    "name": "my-store-data",
+    "html_url": "https://github.com/andresfls-buc/my-store-data",
+    "description": "",
+    "language": "JavaScript",
+    "stargazers_count": "1",
+    "forks_count": "0"
+  },
+  {
+    "id": "/andresfls-buc/Medpet",
+    "name": "Medpet",
+    "html_url": "https://github.com/andresfls-buc/Medpet",
+    "description": "",
+    "language": "JavaScript",
+    "stargazers_count": "1",
+    "forks_count": "0"
+  },
+  {
+    "id": "/andresfls-buc/curso-swift-WhoIsThatPKMN",
+    "name": "curso-swift-WhoIsThatPKMN",
+    "html_url": "https://github.com/andresfls-buc/curso-swift-WhoIsThatPKMN",
+    "description": "",
+    "language": "Swift",
+    "stargazers_count": "1",
+    "forks_count": "0"
+  },
+  {
+    "id": "/andresfls-buc/ml-repository",
+    "name": "ml-repository",
+    "html_url": "https://github.com/andresfls-buc/ml-repository",
+    "description": "Post-training a 0.6B banking assistant with LoRA, SFT, DPO, evaluation, and FastAPI",
+    "language": "Python",
+    "stargazers_count": "1",
+    "forks_count": "0"
+  }
+]
