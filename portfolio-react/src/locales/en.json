@@ -1,8 +1,8 @@
 {
   "title": "AI Engineer | Foundation Models | Pre-training & Post-training",
   "about_me_h3": "About Me",
-  "about_me_p": "I’m a Colombian AI engineer based in Japan, specializing in the pre-training and post-training of foundation models. I’m drawn to the work behind the model: how it learns, where its capabilities come from, and what it takes to turn those capabilities into useful behavior.\n\nMy focus spans two closely connected challenges: building strong foundations through pre-training, and refining model behavior through post-training. What interests me most is the connection between them—how choices made during training show up in the answers a model gives, the mistakes it makes, and the limits of what it can do.\n\nFor me, a compelling demo is the beginning of the conversation. I want to understand why something works, where it breaks, and how to make it better. That curiosity is what keeps me building, experimenting, and digging deeper into the systems behind modern AI.",
-  "stack_h3": "Programming Stack",
+  "about_me_p": "I’m Andrés Landazábal, a Colombian systems engineer and AI engineer based in Japan, with more than five and a half years of experience in the IT industry. I bring a systems perspective to AI: understanding the model, building the software around it, and keeping the complete system working.\n\nMy AI background is rooted in machine learning and deep learning. I’ve trained models using supervised learning, neural networks, and Transformer architectures, working with Python, NumPy, PyTorch, and TensorFlow. Today, I apply that foundation to foundation-model pre-training and post-training, including LoRA, SFT, DPO, and model evaluation.\n\nI build, deploy, and maintain AI systems, connecting models to APIs, backends, and web applications, with Docker and Kubernetes supporting deployment and operation. I care about understanding why a system works, identifying where it fails, and improving it over time. For your project, that means an engineer who can work across model development, application integration, and ongoing maintenance.",
+  "stack_h3": "AI & Engineering Stack",
   "languages_h3": "Languages",
   "projects_h3": "Pinned Projects",
   "projects_loading": "Loading repositories...",
@@ -10,7 +10,7 @@
   "connect_h3": "Connect & Projects",
   "github_btn": "GitHub Repositories",
   "linkedin_btn": "LinkedIn Profile",
-  "contact_btn": "Contact Email",
+  "contact_btn": "Find me on X",
   "footer": "Engineered by Andrés Landazábal",
   "download_cv": "Download CV",
   "lang_names": {
@@ -20,7 +20,7 @@
   },
   "levels": {
     "native": "Native",
-    "n3": "N3 (Daily Conversation)",
+    "n2": "JLPT N2",
     "b2": "B2 (Professional)"
   },
   "hero": {
@@ -29,5 +29,178 @@
     "portrait_alt": "Pixel-art portrait of Andrés in a white shirt and tan vest, with trees behind him.",
     "pause": "Pause blinking",
     "resume": "Resume blinking"
+  },
+  "design": {
+    "skip": "Skip to content",
+    "navigation": "Main navigation",
+    "work": "Selected work",
+    "contact": "Contact",
+    "selected": "Experiments, models & applications",
+    "featured": "Featured project / AI engineering",
+    "modelTitle": "A banking assistant, post-trained.",
+    "modelDescription": "Post-training a 0.6B model with LoRA, SFT and DPO — from evaluation to serving with FastAPI.",
+    "headline": "Behind the model.",
+    "headlineAccent": "Beyond the demo.",
+    "intro": "I’m an AI engineer focused on foundation models — how they learn, how they behave, and how to make them better.",
+    "portraitCaption": "From Colombia. Based in Japan.",
+    "contactTitle": "Let’s build something thoughtful.",
+    "backTop": "Back to top",
+    "groups": {
+      "AI": "AI & models",
+      "Web": "Web development",
+      "Tools": "Data & tools"
+    }
+  },
+  "retro": {
+    "home": "andres — personal homepage",
+    "welcome": "Welcome to my corner of the web!",
+    "role": "AI ENGINEER / FOUNDATION MODELS",
+    "note": "A little curiosity. A lot of experimenting.",
+    "photoAlt": "Studio-style portrait of Andrés in a white shirt and tan vest against a gray background.",
+    "status": "Ready to explore",
+    "ribbon": "A personal site with a curious mind",
+    "ribbonEnd": "Made to be explored",
+    "badges": "Personal website badges"
+  },
+  "sales": {
+    "heroWindow": "Andrés Landazábal — AI engineering & development",
+    "heroEyebrow": "IDEAS IN. WORKING SYSTEMS OUT.",
+    "role": "AI Engineer",
+    "headline": "Make AI",
+    "headlineAccent": "work for you.",
+    "heroIntro": "AI engineering grounded in machine learning and deep learning. I train models and build, deploy, and maintain the systems around them.",
+    "heroNote": "Machine learning · Deep learning · AI systems",
+    "status": "Colombia → Japan / Japanese: JLPT N2",
+    "discuss": "Discuss a project on X",
+    "seeWork": "See the work",
+    "ribbon": "BUILT TO SOLVE. MADE TO WORK.",
+    "ribbonEnd": "YOUR NEXT PROJECT STARTS HERE",
+    "servicesLabel": "Services",
+    "servicesNote": "CHOOSE YOUR NEXT MOVE",
+    "servicesHeadline": "What do you want to build?",
+    "servicesIntro": "Pick a focus to see how I can help and what we can build together.",
+    "needLabel": "THE CHALLENGE",
+    "deliverables": "WHAT WE CAN BUILD",
+    "services": [
+      {
+        "title": "Train & refine",
+        "need": "A model that fits your task.",
+        "description": "Train machine learning and deep learning models with supervised learning, neural networks, and Transformer architectures. Adapt foundation models with focused post-training workflows.",
+        "deliverables": [
+          "Supervised training with PyTorch / TensorFlow",
+          "Foundation-model adaptation with LoRA, SFT / DPO",
+          "Documented training and evaluation workflows"
+        ]
+      },
+      {
+        "title": "Evaluate & improve",
+        "need": "Know where your model breaks.",
+        "description": "Turn “it looks good” into a structured evaluation. Investigate failure cases and use the findings to guide the next experiment.",
+        "deliverables": [
+          "An evaluation plan for your use case",
+          "Analysis of model responses and failures",
+          "Prioritized improvement experiments"
+        ]
+      },
+      {
+        "title": "Build, deploy & maintain",
+        "need": "An AI system that goes beyond training.",
+        "description": "Build the APIs and applications around your model, deploy with Docker and Kubernetes, and maintain the system as it evolves.",
+        "deliverables": [
+          "Model APIs and application integration",
+          "Containerized deployment with Docker / Kubernetes",
+          "AI system maintenance and improvements"
+        ]
+      }
+    ],
+    "challenge": "FOCUS",
+    "challengeText": "Adapt a small model for banking-assistant behavior.",
+    "build": "IMPLEMENTATION",
+    "buildText": "LoRA, SFT, DPO, evaluation, and FastAPI in one repository.",
+    "inspect": "Explore the repository",
+    "pipelineLabel": "Banking assistant workflow: LoRA and SFT, DPO, evaluation, and FastAPI.",
+    "modelLabel": "PARAMETER MODEL",
+    "evaluation": "Evaluation",
+    "pipelineCaption": "Training → evaluation → serving",
+    "moreProjects": "MORE FROM THE WORKBENCH",
+    "aboutHeadline": "Systems engineer. AI builder.",
+    "aboutCopy": "I’m Andrés Landazábal, a Colombian systems engineer and AI engineer based in Japan, with more than five and a half years of experience in the IT industry. I bring a systems perspective to AI: understanding the model, building the software around it, and keeping the complete system working.\n\nMy AI background is rooted in machine learning and deep learning. I’ve trained models using supervised learning, neural networks, and Transformer architectures, working with Python, NumPy, PyTorch, and TensorFlow. Today, I apply that foundation to foundation-model pre-training and post-training, including LoRA, SFT, DPO, and model evaluation.\n\nI build, deploy, and maintain AI systems, connecting models to APIs, backends, and web applications, with Docker and Kubernetes supporting deployment and operation. I care about understanding why a system works, identifying where it fails, and improving it over time. For your project, that means an engineer who can work across model development, application integration, and ongoing maintenance.",
+    "contactTitle": "Got a problem worth solving?",
+    "contactPrompt": "Tell me what you want to build, where you are now, and what you need help with."
+  },
+  "stack": {
+    "intro": "From supervised learning and neural networks to deployed AI systems.",
+    "lifecycle": "TRAIN → BUILD → DEPLOY → MAINTAIN",
+    "scopeTitle": "Across the AI lifecycle",
+    "scope": "Model training, evaluation, application development, deployment, and ongoing maintenance. I connect the learning system to the software and infrastructure that make it usable.",
+    "groups": [
+      {
+        "title": "Machine learning & deep learning",
+        "description": "The foundation of my AI work: learning from data and training neural networks for a task.",
+        "items": [
+          "Supervised learning",
+          "Neural networks",
+          "Transformer architectures"
+        ]
+      },
+      {
+        "title": "Scientific computing & frameworks",
+        "description": "The tools I use to work with numerical data, build models, and run training experiments.",
+        "items": [
+          "Python",
+          "NumPy",
+          "PyTorch",
+          "TensorFlow"
+        ]
+      },
+      {
+        "title": "Foundation models & adaptation",
+        "description": "Train and refine model behavior through pre-training and targeted post-training workflows.",
+        "items": [
+          "Pre-training",
+          "Post-training",
+          "LoRA",
+          "SFT",
+          "DPO",
+          "Model evaluation"
+        ]
+      },
+      {
+        "title": "AI systems & deployment",
+        "description": "Build, deploy, and maintain model-backed systems, from APIs to containerized infrastructure.",
+        "items": [
+          "Docker",
+          "Kubernetes",
+          "FastAPI",
+          "REST APIs",
+          "Linux",
+          "System maintenance"
+        ]
+      },
+      {
+        "title": "Application engineering",
+        "description": "Build the interfaces and backends that make AI systems useful to people.",
+        "items": [
+          "React.js",
+          "JavaScript",
+          "Django",
+          "Node.js",
+          "HTML5 & CSS3",
+          "Bootstrap"
+        ]
+      },
+      {
+        "title": "Data & development tools",
+        "description": "Support application development with databases, version control, and cloud fundamentals.",
+        "items": [
+          "SQL",
+          "MySQL",
+          "PostgreSQL",
+          "Git & GitHub",
+          "AWS Basics",
+          "Cybersecurity"
+        ]
+      }
+    ]
   }
 }

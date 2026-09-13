@@ -1,8 +1,8 @@
 {
   "title": "Ingeniero de IA | Modelos fundacionales | Preentrenamiento y postentrenamiento",
   "about_me_h3": "Sobre Mí",
-  "about_me_p": "Soy un ingeniero de IA colombiano que vive en Japón, especializado en el preentrenamiento y postentrenamiento de modelos fundacionales. Me atrae el trabajo que hay detrás del modelo: cómo aprende, de dónde surgen sus capacidades y qué hace falta para convertirlas en un comportamiento útil.\n\nMi enfoque abarca dos retos estrechamente relacionados: construir bases sólidas mediante el preentrenamiento y perfeccionar el comportamiento del modelo mediante el postentrenamiento. Lo que más me interesa es la conexión entre ambos: cómo las decisiones tomadas durante el entrenamiento se reflejan en las respuestas de un modelo, en sus errores y en los límites de lo que puede hacer.\n\nPara mí, una demo convincente es el comienzo de la conversación. Quiero entender por qué algo funciona, dónde falla y cómo mejorarlo. Esa curiosidad me impulsa a seguir construyendo, experimentando y profundizando en los sistemas que hacen posible la IA actual.",
-  "stack_h3": "Stack de Programación",
+  "about_me_p": "Soy Andrés Landazábal, ingeniero de sistemas e ingeniero de IA colombiano, radicado en Japón, con más de cinco años y medio de experiencia en la industria de TI. Aporto una visión de sistemas a la IA: comprender el modelo, construir el software que lo rodea y mantener el conjunto en funcionamiento.\n\nMi trayectoria en IA nace del machine learning y el deep learning. He entrenado modelos con aprendizaje supervisado, redes neuronales y arquitecturas Transformer, utilizando Python, NumPy, PyTorch y TensorFlow. Hoy aplico esas bases al preentrenamiento y postentrenamiento de modelos fundacionales, incluyendo LoRA, SFT, DPO y evaluación de modelos.\n\nConstruyo, despliego y mantengo sistemas de IA, conectando modelos con APIs, backends y aplicaciones web, con Docker y Kubernetes para su despliegue y operación. Me interesa entender por qué funciona un sistema, identificar dónde falla y mejorarlo con el tiempo. Para tu proyecto, eso significa contar con un ingeniero que puede trabajar en el modelo, su integración en una aplicación y su mantenimiento continuo.",
+  "stack_h3": "Stack de IA e ingeniería",
   "languages_h3": "Idiomas",
   "projects_h3": "Proyectos fijados",
   "projects_loading": "Cargando repositorios...",
@@ -10,7 +10,7 @@
   "connect_h3": "Conectar y Proyectos",
   "github_btn": "Repositorios de GitHub",
   "linkedin_btn": "Perfil de LinkedIn",
-  "contact_btn": "Correo de Contacto",
+  "contact_btn": "Encuéntrame en X",
   "footer": "Diseñado por Andrés Landazábal",
   "download_cv": "Descargar CV",
   "lang_names": {
@@ -20,7 +20,7 @@
   },
   "levels": {
     "native": "Nativo",
-    "n3": "N3 (Conversación Diaria)",
+    "n2": "JLPT N2",
     "b2": "B2 (Profesional)"
   },
   "hero": {
@@ -29,5 +29,178 @@
     "portrait_alt": "Retrato pixel art de Andrés con camisa blanca y chaleco beige, con árboles al fondo.",
     "pause": "Pausar parpadeo",
     "resume": "Reanudar parpadeo"
+  },
+  "design": {
+    "skip": "Saltar al contenido",
+    "navigation": "Navegación principal",
+    "work": "Trabajo seleccionado",
+    "contact": "Contacto",
+    "selected": "Experimentos, modelos y aplicaciones",
+    "featured": "Proyecto destacado / Ingeniería de IA",
+    "modelTitle": "Un asistente bancario con postentrenamiento.",
+    "modelDescription": "Postentrenamiento de un modelo de 0.6B con LoRA, SFT y DPO: desde la evaluación hasta su despliegue con FastAPI.",
+    "headline": "Detrás del modelo.",
+    "headlineAccent": "Más allá de la demo.",
+    "intro": "Soy ingeniero de IA enfocado en modelos fundacionales: cómo aprenden, cómo se comportan y cómo mejorarlos.",
+    "portraitCaption": "De Colombia. En Japón.",
+    "contactTitle": "Construyamos algo con intención.",
+    "backTop": "Volver arriba",
+    "groups": {
+      "AI": "IA y modelos",
+      "Web": "Desarrollo web",
+      "Tools": "Datos y herramientas"
+    }
+  },
+  "retro": {
+    "home": "andres — página personal",
+    "welcome": "¡Bienvenido a mi rincón de internet!",
+    "role": "INGENIERO DE IA / MODELOS FUNDACIONALES",
+    "note": "Un poco de curiosidad. Mucha experimentación.",
+    "photoAlt": "Retrato de estudio de Andrés con camisa blanca y chaleco beige sobre un fondo gris.",
+    "status": "Listo para explorar",
+    "ribbon": "Una web personal con una mente curiosa",
+    "ribbonEnd": "Hecho para explorar",
+    "badges": "Insignias de la web personal"
+  },
+  "sales": {
+    "heroWindow": "Andrés Landazábal — ingeniería de IA y desarrollo",
+    "heroEyebrow": "DE LAS IDEAS A LOS SISTEMAS.",
+    "role": "Ingeniero de IA",
+    "headline": "Haz que la IA",
+    "headlineAccent": "trabaje para ti.",
+    "heroIntro": "Ingeniería de IA con bases en machine learning y deep learning. Entreno modelos y construyo, despliego y mantengo los sistemas que los rodean.",
+    "heroNote": "Machine learning · Deep learning · Sistemas de IA",
+    "status": "Colombia → Japón / Japonés: JLPT N2",
+    "discuss": "Hablemos de tu proyecto en X",
+    "seeWork": "Ver mi trabajo",
+    "ribbon": "CREADO PARA RESOLVER. HECHO PARA FUNCIONAR.",
+    "ribbonEnd": "TU PRÓXIMO PROYECTO EMPIEZA AQUÍ",
+    "servicesLabel": "Servicios",
+    "servicesNote": "ELIGE TU SIGUIENTE PASO",
+    "servicesHeadline": "¿Qué quieres construir?",
+    "servicesIntro": "Elige un enfoque para ver cómo puedo ayudarte y qué podemos crear juntos.",
+    "needLabel": "EL RETO",
+    "deliverables": "QUÉ PODEMOS CONSTRUIR",
+    "services": [
+      {
+        "title": "Entrenar y adaptar",
+        "need": "Un modelo para tu tarea.",
+        "description": "Entrenar modelos de machine learning y deep learning con aprendizaje supervisado, redes neuronales y arquitecturas Transformer. Adaptar modelos fundacionales con flujos de postentrenamiento enfocados.",
+        "deliverables": [
+          "Entrenamiento supervisado con PyTorch / TensorFlow",
+          "Adaptación con LoRA, SFT / DPO",
+          "Flujos documentados de entrenamiento y evaluación"
+        ]
+      },
+      {
+        "title": "Evaluar y mejorar",
+        "need": "Entender dónde falla tu modelo.",
+        "description": "Pasar de «parece funcionar» a una evaluación estructurada. Investigar los fallos y usar los resultados para orientar el siguiente experimento.",
+        "deliverables": [
+          "Un plan de evaluación para tu caso de uso",
+          "Análisis de respuestas y fallos",
+          "Experimentos de mejora priorizados"
+        ]
+      },
+      {
+        "title": "Crear, desplegar y mantener",
+        "need": "Un sistema de IA más allá del entrenamiento.",
+        "description": "Construir las APIs y aplicaciones de tu modelo, desplegar con Docker y Kubernetes y mantener el sistema a medida que evoluciona.",
+        "deliverables": [
+          "APIs de modelos e integración de aplicaciones",
+          "Despliegue con Docker / Kubernetes",
+          "Mantenimiento y mejora de sistemas de IA"
+        ]
+      }
+    ],
+    "challenge": "ENFOQUE",
+    "challengeText": "Adaptar un modelo pequeño como asistente bancario.",
+    "build": "IMPLEMENTACIÓN",
+    "buildText": "LoRA, SFT, DPO, evaluación y FastAPI en un repositorio.",
+    "inspect": "Explorar el repositorio",
+    "pipelineLabel": "Flujo del asistente bancario: LoRA y SFT, DPO, evaluación y FastAPI.",
+    "modelLabel": "PARÁMETROS DEL MODELO",
+    "evaluation": "Evaluación",
+    "pipelineCaption": "Entrenamiento → evaluación → API",
+    "moreProjects": "MÁS PROYECTOS DEL TALLER",
+    "aboutHeadline": "Ingeniero de sistemas. Creador de IA.",
+    "aboutCopy": "Soy Andrés Landazábal, ingeniero de sistemas e ingeniero de IA colombiano, radicado en Japón, con más de cinco años y medio de experiencia en la industria de TI. Aporto una visión de sistemas a la IA: comprender el modelo, construir el software que lo rodea y mantener el conjunto en funcionamiento.\n\nMi trayectoria en IA nace del machine learning y el deep learning. He entrenado modelos con aprendizaje supervisado, redes neuronales y arquitecturas Transformer, utilizando Python, NumPy, PyTorch y TensorFlow. Hoy aplico esas bases al preentrenamiento y postentrenamiento de modelos fundacionales, incluyendo LoRA, SFT, DPO y evaluación de modelos.\n\nConstruyo, despliego y mantengo sistemas de IA, conectando modelos con APIs, backends y aplicaciones web, con Docker y Kubernetes para su despliegue y operación. Me interesa entender por qué funciona un sistema, identificar dónde falla y mejorarlo con el tiempo. Para tu proyecto, eso significa contar con un ingeniero que puede trabajar en el modelo, su integración en una aplicación y su mantenimiento continuo.",
+    "contactTitle": "¿Un problema que merece solución?",
+    "contactPrompt": "Cuéntame qué quieres construir, en qué punto estás y con qué necesitas ayuda."
+  },
+  "stack": {
+    "intro": "Del aprendizaje supervisado y las redes neuronales a sistemas de IA desplegados.",
+    "lifecycle": "ENTRENAR → CREAR → DESPLEGAR → MANTENER",
+    "scopeTitle": "Todo el ciclo de la IA",
+    "scope": "Entrenamiento, evaluación, desarrollo de aplicaciones, despliegue y mantenimiento continuo. Conecto el modelo con el software y la infraestructura que lo hacen útil.",
+    "groups": [
+      {
+        "title": "Machine learning y deep learning",
+        "description": "La base de mi trabajo en IA: aprender de los datos y entrenar redes neuronales para una tarea.",
+        "items": [
+          "Aprendizaje supervisado",
+          "Redes neuronales",
+          "Arquitecturas Transformer"
+        ]
+      },
+      {
+        "title": "Cómputo científico y frameworks",
+        "description": "Herramientas para trabajar con datos numéricos, construir modelos y ejecutar experimentos de entrenamiento.",
+        "items": [
+          "Python",
+          "NumPy",
+          "PyTorch",
+          "TensorFlow"
+        ]
+      },
+      {
+        "title": "Modelos fundacionales y adaptación",
+        "description": "Entrenar y ajustar el comportamiento de modelos mediante preentrenamiento y postentrenamiento enfocado.",
+        "items": [
+          "Preentrenamiento",
+          "Postentrenamiento",
+          "LoRA",
+          "SFT",
+          "DPO",
+          "Evaluación de modelos"
+        ]
+      },
+      {
+        "title": "Sistemas de IA y despliegue",
+        "description": "Construir, desplegar y mantener sistemas con modelos, desde APIs hasta infraestructura en contenedores.",
+        "items": [
+          "Docker",
+          "Kubernetes",
+          "FastAPI",
+          "REST APIs",
+          "Linux",
+          "Mantenimiento de sistemas"
+        ]
+      },
+      {
+        "title": "Ingeniería de aplicaciones",
+        "description": "Crear las interfaces y los backends que hacen útiles los sistemas de IA para las personas.",
+        "items": [
+          "React.js",
+          "JavaScript",
+          "Django",
+          "Node.js",
+          "HTML5 & CSS3",
+          "Bootstrap"
+        ]
+      },
+      {
+        "title": "Datos y herramientas de desarrollo",
+        "description": "Apoyar el desarrollo con bases de datos, control de versiones y fundamentos de la nube.",
+        "items": [
+          "SQL",
+          "MySQL",
+          "PostgreSQL",
+          "Git & GitHub",
+          "Fundamentos de AWS",
+          "Ciberseguridad"
+        ]
+      }
+    ]
   }
 }
