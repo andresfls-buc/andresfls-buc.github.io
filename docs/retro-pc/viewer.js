@@ -146,6 +146,7 @@ function mixRect(a,b,t){
 function setFocusProgress(value){
   focusProgress=value;
   viewer.style.setProperty('--focus-progress',String(value));
+  touchDesktop?.blend(value);
   viewer.style.setProperty('--focus-ui',String(THREE.MathUtils.smoothstep(value,.65,1)));
 }
 function render(time){
@@ -217,7 +218,7 @@ function enterScreen(){
   const sourceRect=rectOf(stage);
   placeholder=document.createElement('div');placeholder.className='viewer viewer-placeholder';
   placeholder.setAttribute('aria-hidden','true');viewer.before(placeholder);
-  mode='entering';syncGrabCursor();renderer.domElement.style.cursor='var(--cursor-arrow)';controls.enabled=false;renderer.setPixelRatio(motionPixelRatio);
+  mode='entering';touchDesktop.setMode(mode);syncGrabCursor();renderer.domElement.style.cursor='var(--cursor-arrow)';controls.enabled=false;renderer.setPixelRatio(motionPixelRatio);
   setPower(true);setInert(true);setFocusProgress(0);
   document.body.classList.add('screen-focused');
   renderRect=sourceRect;
@@ -230,7 +231,7 @@ function enterScreen(){
   animateTo(pose.position,pose.target,()=>{mode='desktop';touchDesktop.setMode(mode);renderRect=fullRect();renderer.setPixelRatio(displayPixelRatio);resize();syncWallpaperMotion();requestRender();});
 }
 function finishExit(){
-  mode='orbit';renderRect=null;renderer.setPixelRatio(displayPixelRatio);
+  mode='orbit';touchDesktop.setMode(mode);renderRect=null;renderer.setPixelRatio(displayPixelRatio);
   document.body.classList.remove('screen-focused');
   placeholder?.remove();placeholder=null;
   viewer.removeAttribute('role');viewer.removeAttribute('aria-modal');viewer.removeAttribute('aria-label');
@@ -285,6 +286,7 @@ function openShutdown(){
   $('#shutdown-description').textContent='Closes the desktop and turns off the computer.';
   $('#shutdown-help').hidden=true;$('#shutdown-help-button').setAttribute('aria-expanded','false');
   $('#shutdown-status').hidden=true;
+  $('#shutdown-form').classList.remove('is-progress');
   shutdownWindow.showModal();syncWallpaperMotion();
 }
 function cancelShutdown(){
@@ -296,6 +298,7 @@ function confirmShutdown(event){
   const restart=$('#shutdown-action').value==='restart';
   shutdownWindow.setAttribute('aria-busy','true');
   shutdownWindow.querySelectorAll('button,select').forEach(control=>control.disabled=true);
+  $('#shutdown-form').classList.add('is-progress');
   $('#shutdown-status').hidden=false;
   $('#shutdown-status').textContent=restart?'Windows is restarting…':'Windows is shutting down…';
   shutdownTimer=setTimeout(()=>{
@@ -343,6 +346,7 @@ function isPowerSwitch(hit){
 function setPower(on){
   if(!screenMaterial)return;
   $('#touch-desktop').inert=!on;
+  $('#touch-desktop').classList.toggle('screen-off',!on);
   screenLit=on;screenMaterial.map=on?desktop.texture:null;screenMaterial.emissiveMap=on?desktop.texture:null;
   screenMaterial.color.set(on?0x141414:0x10151c);
   screenMaterial.emissive.set(on?0xffffff:0x000000);
@@ -501,7 +505,7 @@ $('#maximize-portfolio').addEventListener('click',togglePortfolioSize);
 $('.portfolio-titlebar').addEventListener('dblclick',event=>{if(!event.target.closest('button'))togglePortfolioSize();});
 portfolioWindow.addEventListener('cancel',event=>{event.preventDefault();closePortfolio();});
 portfolioWindow.addEventListener('close',()=>{
-  if(portfolioWindow.open)return;
+  if(portfolioWindow.open||shutdownTimer||!screenLit||mode!=='desktop')return;
   syncWallpaperMotion();
   focusDesktop();
 });

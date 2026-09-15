@@ -114,3 +114,30 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .screen-toolbar button{min-height:44px}
 }
 @media(max-height:500px){#touch-desktop{inset:58px 0 0}.touch-explorer{inset:12px 8px 60px}.touch-explorer.is-maximized{inset:0 0 52px}}
+
+/* Actual image icons keep the mobile shell independent of font glyph support. */
+.desktop-icon{width:20px;height:20px;object-fit:contain;flex:none;image-rendering:pixelated}
+.touch-folder .desktop-icon,.touch-file .desktop-icon{width:40px;height:40px}
+.touch-explorer header strong,.touch-address span,.touch-start-menu strong,.touch-start-menu button,.touch-taskbar button,.touch-tray{display:flex;align-items:center;gap:6px}
+.touch-explorer header strong span,.touch-taskbar button span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.touch-explorer header strong{min-width:0}
+.touch-explorer header div{flex:none}
+.touch-taskbar button{padding-inline:5px;font-weight:normal}
+.touch-taskbar button:first-child{font-weight:bold;flex:none}
+.touch-start-menu button .desktop-icon{width:28px;height:28px}
+.touch-start-menu button[data-action=shutdown]{border-top:1px solid #999;box-shadow:inset 0 1px white}
+.touch-tray{padding:0 5px;border:2px inset white;flex:none;font-size:11px;gap:3px}
+.touch-tray .desktop-icon{width:16px;height:16px}
+#portfolio-title{display:flex;align-items:center;gap:7px;min-width:0}
+#portfolio-title span{overflow:hidden;text-overflow:ellipsis}
+#touch-desktop.screen-off{background:#10151c}
+#touch-desktop.screen-off>*{visibility:hidden}
+#shutdown-form.is-progress>label,#shutdown-form.is-progress>select,#shutdown-form.is-progress>#shutdown-description,#shutdown-form.is-progress>#shutdown-help,#shutdown-form.is-progress>.shutdown-actions{display:none}
+#shutdown-form.is-progress{min-height:135px;display:flex;align-items:center;justify-content:center}
+#shutdown-form.is-progress #shutdown-status{margin:0;text-align:center}
+@media(max-width:700px),(pointer:coarse){
+  #shutdown-window{width:calc(100% - 32px);max-width:420px;max-height:calc(100% - 100px)}
+  #shutdown-close{width:44px;height:44px}
+  .shutdown-actions button{min-height:44px}
+  #shutdown-action{min-height:44px;font-size:16px}
+}
