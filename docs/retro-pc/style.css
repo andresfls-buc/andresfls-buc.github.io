@@ -79,3 +79,38 @@ html.is-grabbing .drag-cursor{display:block}
 .shutdown-actions{display:flex;justify-content:flex-end;gap:8px}.shutdown-actions button{min-width:74px;min-height:28px;font:12px Tahoma,Arial,sans-serif}
 #shutdown-window[aria-busy="true"] #shutdown-status{margin-top:12px}
 @media(pointer:coarse){.shutdown-actions button{min-height:38px}#shutdown-action{min-height:36px}}
+
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+#touch-desktop[hidden],#touch-desktop [hidden]{display:none!important}
+#touch-desktop{position:absolute;inset:68px 0 0;z-index:4;background:#3a6ea5;color:#111;font:14px Tahoma,Arial,sans-serif;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.touch-desktop-active #stage{visibility:hidden}
+#touch-desktop button{min-height:44px;touch-action:manipulation;border-radius:0;color:#111}
+.touch-wallpaper{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;opacity:.8}
+.touch-wallpaper canvas{max-width:90%;max-height:85%;width:auto;height:auto;object-fit:contain}
+.touch-folder,.touch-file{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:100px;min-height:96px;background:none;border:0;padding:12px}
+.touch-folder{position:relative;margin:8px;color:white!important;text-shadow:1px 1px #000}
+.touch-folder img{width:40px;height:40px;image-rendering:pixelated}
+.touch-explorer{position:absolute;inset:112px 10px 70px;display:flex;flex-direction:column;border:2px outset white;background:#d4d0c8;box-shadow:3px 4px #0004;min-height:180px}
+.touch-explorer.is-maximized{inset:0 0 52px;box-shadow:none}
+.touch-explorer header{display:flex;align-items:center;justify-content:space-between;gap:4px;background:linear-gradient(90deg,#0a246a,#6a99cf);color:white;padding:3px 4px 3px 8px}
+.touch-explorer header strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.touch-explorer header div{display:flex;gap:3px}
+.touch-explorer header button{width:44px;background:#d4d0c8;border:2px outset white;font:bold 22px Arial}
+.touch-address{display:flex;gap:10px;align-items:center;padding:8px;font-size:12px}.touch-address span{flex:1;background:white;padding:6px;border:2px inset white}
+.touch-files{flex:1;min-height:0;overflow:auto;background:white;margin:0 4px;border:2px inset white}.touch-file{margin:8px}.document-icon{font:40px Arial;color:#0a246a}
+.touch-file:active,.touch-folder:active{background:#0a246a;color:white!important}
+.touch-explorer footer{font-size:12px;padding:5px 8px}
+.touch-taskbar{position:absolute;bottom:0;left:0;right:0;display:flex;gap:4px;padding:3px 4px max(3px,env(safe-area-inset-bottom));background:#d4d0c8;border-top:2px solid white;min-height:52px}
+.touch-taskbar button{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:4px 8px;background:#d4d0c8;border:2px outset white;font:bold 12px Tahoma,Arial}.touch-taskbar button:not(:first-child){flex:1}.touch-taskbar button[aria-pressed=true]{border-style:inset}
+.touch-start-menu{position:absolute;bottom:52px;left:4px;z-index:2;width:250px;padding:4px;background:#d4d0c8;border:2px outset white;box-shadow:3px 3px #0005}
+.touch-start-menu strong{display:block;background:#0a246a;color:white;padding:10px}.touch-start-menu button{display:block;text-align:left;width:100%;border:0;background:none;padding:10px}.touch-start-menu button:active{background:#0a246a;color:white!important}
+@media(max-width:700px),(pointer:coarse){
+  .portfolio-actions button{width:44px;height:44px}
+  .portfolio-titlebar{gap:4px;padding:3px 4px 3px 8px;min-height:50px}
+  .portfolio-titlebar h1{min-width:0;font-size:12px}
+  #portfolio-window{width:calc(100% - 12px);height:calc(100% - 28px);max-width:none;max-height:100%;padding:2px}
+  #portfolio-window.is-maximized{position:fixed;inset:0;width:100%;height:100%;max-height:100%;margin:0;padding:0}
+  #portfolio-content{display:block;min-width:0;flex:1 1 0;height:0;-webkit-overflow-scrolling:touch}
+  .screen-toolbar button{min-height:44px}
+}
+@media(max-height:500px){#touch-desktop{inset:58px 0 0}.touch-explorer{inset:12px 8px 60px}.touch-explorer.is-maximized{inset:0 0 52px}}

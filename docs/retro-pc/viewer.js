@@ -7,6 +7,7 @@ import {ClassicDesktop} from './desktop.js';
 import {personalizeNameplates} from './nameplate.js';
 import {PowerButtonMotion} from './power-button-motion.js';
 import {KeyboardMotion} from './keyboard-motion.js';
+import {TouchDesktop} from './touch-desktop.js';
 
 const $=s=>document.querySelector(s);
 const stage=$('#stage'), viewer=$('#viewer'), status=$('#loading');
@@ -58,15 +59,29 @@ const portfolioWindow=$('#portfolio-window');
 const portfolioContent=$('#portfolio-content');
 const shutdownWindow=$('#shutdown-window');
 let shutdownTimer=0;
+let touchDesktop;
 const desktop=new ClassicDesktop(state=>{
   $('#desktop-announcement').textContent=state.folderOpen&&!state.minimized?'Folder open. Select portafolio and press Enter, or double-click the file to open it.':'Windows 2000 desktop. Open the portafolio folder.';
+  touchDesktop?.sync();
   queueMicrotask(syncWallpaperMotion);
   requestRender();
 },openShutdown,openPortfolio);
+touchDesktop=new TouchDesktop($('#touch-desktop'),desktop,{openPortfolio,openShutdown});
+touchDesktop.media.addEventListener('change',()=>{touchDesktop.setMode(mode);resize();});
+function focusDesktop(){
+  const host=$('#touch-desktop');
+  if(!host.hidden){
+    const selector=desktop.portfolioMinimized?'[data-action="portfolio-task"]':desktop.folderOpen&&!desktop.minimized?'.touch-file':'.touch-folder';
+    host.querySelector(selector)?.focus({preventScroll:true});
+  }else renderer.domElement.focus({preventScroll:true});
+}
 function openPortfolio(){
   desktop.portfolioRunning=true;desktop.portfolioMinimized=false;
   if(!portfolioContent.hasAttribute('src'))portfolioContent.src='../portfolio/';
-  if(!portfolioWindow.open)portfolioWindow.showModal();
+  if(!portfolioWindow.open){
+    if(touchDesktop.media.matches&&!portfolioWindow.classList.contains('is-maximized'))togglePortfolioSize();
+    portfolioWindow.showModal();
+  }
   desktop.draw();syncWallpaperMotion();
 }
 function closePortfolio(){
@@ -119,7 +134,7 @@ function requestRender(){
   remaining=2;
   if(!frame&&visible&&!document.hidden)frame=requestAnimationFrame(render);
 }
-function fullRect(){return {left:0,top:0,width:innerWidth,height:innerHeight};}
+function fullRect(){const r=stage.getBoundingClientRect();return {left:0,top:0,width:r.width,height:r.height};}
 function rectOf(element){
   const r=element.getBoundingClientRect();
   return {left:r.left,top:r.top,width:r.width,height:r.height};
@@ -183,7 +198,7 @@ function animateTo(position,target,done){
 function stopRotation(){
   rotating=false;controls.autoRotate=false;
 }
-function focusPose(aspect=innerWidth/innerHeight,fov=36){
+function focusPose(aspect=stage.clientWidth/stage.clientHeight,fov=36){
   const center=screenBounds.getCenter(new THREE.Vector3());
   const size=screenBounds.getSize(new THREE.Vector3());
   const tan=Math.tan(THREE.MathUtils.degToRad(fov/2));
@@ -212,7 +227,7 @@ function enterScreen(){
   $('#back-to-pc').focus({preventScroll:true});
   visible=true;resize();
   const pose=focusPose();
-  animateTo(pose.position,pose.target,()=>{mode='desktop';renderRect=fullRect();renderer.setPixelRatio(displayPixelRatio);resize();syncWallpaperMotion();requestRender();});
+  animateTo(pose.position,pose.target,()=>{mode='desktop';touchDesktop.setMode(mode);renderRect=fullRect();renderer.setPixelRatio(displayPixelRatio);resize();syncWallpaperMotion();requestRender();});
 }
 function finishExit(){
   mode='orbit';renderRect=null;renderer.setPixelRatio(displayPixelRatio);
@@ -228,7 +243,7 @@ function finishExit(){
 }
 function exitScreen(){
   if(mode==='orbit'||mode==='leaving')return;
-  mode='leaving';syncWallpaperMotion();renderer.setPixelRatio(motionPixelRatio);resize();
+  mode='leaving';touchDesktop.setMode(mode);syncWallpaperMotion();renderer.setPixelRatio(motionPixelRatio);resize();
   animateTo(previousPose?.position??home,previousPose?.target??homeTarget,finishExit);
 }
 function homePosition(){
@@ -247,10 +262,10 @@ function resize(){
     renderer.setSize(width,height,false);camera.aspect=width/height;
     camera.fov=width<430?44:36;camera.updateProjectionMatrix();
   }else{
-    renderer.setSize(innerWidth,innerHeight,false);
+    renderer.setSize(width,height,false);
     if(screenMesh&&mode==='desktop'){
       const pose=focusPose();renderRect=fullRect();
-      camera.fov=36;camera.aspect=innerWidth/innerHeight;
+      camera.fov=36;camera.aspect=width/height;
       camera.updateProjectionMatrix();camera.position.copy(pose.position);
       controls.target.copy(pose.target);camera.lookAt(pose.target);
     }else if(flight){
@@ -274,7 +289,7 @@ function openShutdown(){
 }
 function cancelShutdown(){
   if(shutdownTimer)return;
-  shutdownWindow.close();renderer.domElement.focus({preventScroll:true});syncWallpaperMotion();
+  shutdownWindow.close();focusDesktop();syncWallpaperMotion();
 }
 function confirmShutdown(event){
   event.preventDefault();if(shutdownTimer)return;
@@ -289,7 +304,7 @@ function confirmShutdown(event){
     shutdownWindow.querySelectorAll('button,select').forEach(control=>control.disabled=false);
     if(restart){
       closePortfolio();desktop.closeFolder();setPower(false);
-      shutdownTimer=setTimeout(()=>{shutdownTimer=0;setPower(true);renderer.domElement.focus({preventScroll:true});},650);
+      shutdownTimer=setTimeout(()=>{shutdownTimer=0;setPower(true);focusDesktop();},650);
     }else shutdownPC();
   },650);
 }
@@ -327,6 +342,7 @@ function isPowerSwitch(hit){
 }
 function setPower(on){
   if(!screenMaterial)return;
+  $('#touch-desktop').inert=!on;
   screenLit=on;screenMaterial.map=on?desktop.texture:null;screenMaterial.emissiveMap=on?desktop.texture:null;
   screenMaterial.color.set(on?0x141414:0x10151c);
   screenMaterial.emissive.set(on?0xffffff:0x000000);
@@ -487,7 +503,7 @@ portfolioWindow.addEventListener('cancel',event=>{event.preventDefault();closePo
 portfolioWindow.addEventListener('close',()=>{
   if(portfolioWindow.open)return;
   syncWallpaperMotion();
-  renderer.domElement.focus({preventScroll:true});
+  focusDesktop();
 });
 portfolioContent.addEventListener('load',()=>{
   portfolioContent.contentDocument.addEventListener('keydown',event=>{
@@ -514,7 +530,7 @@ document.addEventListener('keydown',e=>{
   if(portfolioWindow.open||mode==='orbit')return;
   if(e.key==='Escape'){e.preventDefault();exitScreen();}
   if(e.key==='Tab'){
-    const items=[$('#back-to-pc'),renderer.domElement];
+    const items=[$('#back-to-pc'),...($('#touch-desktop').hidden?[renderer.domElement]:[...$('#touch-desktop').querySelectorAll('button')].filter(button=>button.getClientRects().length&&!button.disabled))];
     const i=items.indexOf(document.activeElement);
     e.preventDefault();items[(i+(e.shiftKey?-1:1)+items.length)%items.length].focus({preventScroll:true});
   }

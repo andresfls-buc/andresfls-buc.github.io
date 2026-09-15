@@ -12,6 +12,8 @@ npm run dev
 
 `npm run build` builds both pages and copies the PC runtime into `docs/` for GitHub Pages. `npm run lint` checks the application code.
 
+On phones and touch devices, entering the PC opens a responsive version of the same desktop with single-tap files and 44px controls. The portfolio opens maximized with sharp text. The outer viewport follows changes in mobile browser chrome.
+
 ## Files
 
 - `portfolio-react/index.html`: full-screen PC landing page.
