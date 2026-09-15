@@ -1,0 +1,81 @@
+:root{color-scheme:dark;--bg:#202731;--fg:#e8e7dc;--accent:#b8cce2;--cursor-arrow:url("./assets/cursors/arrow.svg") 2 2,default;--cursor-link:url("./assets/cursors/hand.svg") 12 2,pointer;--cursor-grabbing:url("./assets/cursors/grabbing.svg") 16 16,grabbing;--cursor-busy:url("./assets/cursors/busy.svg") 16 16,wait}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden}
+body{background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif;cursor:var(--cursor-arrow)}
+main{position:relative;width:100%;height:100dvh}
+button{font:inherit;color:inherit;cursor:var(--cursor-link);-webkit-tap-highlight-color:transparent}
+button:disabled{opacity:.35;cursor:var(--cursor-busy)}
+button:focus-visible,canvas:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.viewer{position:relative;width:100%;height:100dvh;min-width:0;background:radial-gradient(ellipse at 50% 45%,#3b485a 0%,#202731 70%)}
+.stage{position:absolute;inset:0}
+.stage canvas{display:block;width:100%;height:100%;cursor:var(--cursor-arrow);touch-action:none}
+.stage canvas.is-grabbing{cursor:var(--cursor-grabbing)!important}
+.drag-cursor{position:fixed;left:0;top:0;width:32px;height:32px;max-width:none;display:none;pointer-events:none;z-index:2147483647;image-rendering:pixelated;user-select:none}
+html.is-grabbing,html.is-grabbing *,html.is-grabbing #stage canvas{cursor:none!important;user-select:none!important;-webkit-user-select:none!important}
+html.is-grabbing .drag-cursor{display:block}
+.intro-prompt{position:absolute;z-index:3;left:20px;right:20px;bottom:max(7vh,30px);display:flex;justify-content:center;pointer-events:none}
+#enter-screen{pointer-events:auto;display:flex;align-items:center;gap:12px;padding:14px 20px;background:transparent;border:0;border-radius:6px;color:#c0cbd8;font-size:14px;line-height:1.5;letter-spacing:.15px;transition:color .2s}
+#enter-screen:hover{color:#f0f4fa}
+#enter-screen svg{width:19px;height:19px;flex:none;fill:none;stroke:var(--accent);stroke-width:1.5;stroke-linecap:round}
+.screen-toolbar[hidden]{display:none!important}
+.screen-toolbar{position:absolute;z-index:6;left:28px;top:max(24px,env(safe-area-inset-top));pointer-events:none}
+.screen-toolbar button{pointer-events:auto;background:rgba(28,36,48,.88);border:1px solid #62758b;border-radius:5px;padding:11px 15px;color:#e8edf3;font-size:12px}
+.screen-toolbar button:hover{background:#3c4d63}
+.loading{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);pointer-events:none}
+.load-line{display:block;width:70px;height:2px;background:var(--accent);animation:loading 1s ease-in-out infinite alternate}
+.loading.hidden{display:none}
+@keyframes loading{to{opacity:.3;transform:scaleX(.5)}}
+.viewer-placeholder{visibility:hidden!important;pointer-events:none!important}
+.screen-focused #viewer{position:fixed;inset:0;z-index:50;width:100%;height:100dvh;background:transparent}
+.screen-focused #viewer::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,#3b485a 0%,#202731 70%);pointer-events:none}
+.screen-focused .screen-toolbar{opacity:var(--focus-ui,0)}
+.screen-focused .intro-prompt{visibility:hidden}
+.screen-focused #stage canvas{cursor:var(--cursor-arrow)}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:600px){.intro-prompt{left:12px;right:12px;bottom:max(7vh,28px)}#enter-screen{font-size:12px;gap:9px;padding:12px 5px}.screen-toolbar{left:16px;top:max(16px,env(safe-area-inset-top))}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* The existing site lives in a readable, responsive Explorer window. */
+#portfolio-window{padding:3px;margin:auto;width:calc(100vw - 80px);max-width:1120px;height:calc(100dvh - 120px);max-height:none;border:2px outset #eee;background:#d4d0c8;color:#111;box-shadow:8px 12px 0 #0005;overflow:hidden}
+#portfolio-window[open]{display:flex;flex-direction:column}
+#portfolio-window::backdrop{background:#18212da8}
+.portfolio-titlebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:5px 6px 5px 10px;background:linear-gradient(90deg,#0a246a,#6a99cf);color:white;flex-shrink:0}
+.portfolio-titlebar h1{margin:0;font:bold 13px Tahoma,Arial,sans-serif;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.portfolio-actions{display:flex;align-items:center;gap:3px;flex-shrink:0}
+.portfolio-actions button{width:28px;height:26px;padding:0;background:#d4d0c8;color:#111;border:2px outset white;font:bold 22px/20px Arial,sans-serif}
+#portfolio-content{flex:1;min-height:0;width:100%;border:2px inset #eee;background:#f8f5ed}
+@media(max-width:600px){#portfolio-window{width:calc(100% - 16px);height:calc(100dvh - 96px);max-width:100%;margin:auto;}.portfolio-titlebar h1{font-size:11px}.portfolio-actions{gap:3px}}
+
+
+
+/* The canvas is one large touch target: suppress the browser's full-screen
+   tap highlight and native selection on the simulated desktop controls. */
+.stage,.stage canvas,.screen-toolbar,.intro-prompt,.portfolio-titlebar{
+  -webkit-tap-highlight-color:transparent;
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-touch-callout:none;
+}
+.screen-toolbar button,.portfolio-actions button,.portfolio-actions a{touch-action:manipulation}
+
+#portfolio-window.is-maximized{width:100%;max-width:none;height:100dvh;max-height:none;margin:0;border:0;box-shadow:none}
+.portfolio-actions button:active{border-style:inset}
+#minimize-portfolio span{position:relative;top:-4px}
+
+/* Windows 2000's compact shutdown dialog. */
+#shutdown-window{width:420px;max-width:calc(100vw - 28px);max-height:calc(100dvh - 32px);padding:3px;border:2px outset #eee;background:#d4d0c8;color:#111;box-shadow:4px 5px 0 #0005;font:13px Tahoma,Arial,sans-serif;color-scheme:light}
+#shutdown-window::backdrop{background:rgba(15,19,24,.4)}
+.shutdown-titlebar{display:flex;align-items:center;justify-content:space-between;padding:3px 4px 3px 7px;background:linear-gradient(90deg,#0a246a,#6a99cf);color:#fff}
+.shutdown-titlebar h2{margin:0;font:bold 13px Tahoma,Arial,sans-serif}
+#shutdown-close{width:23px;height:22px;padding:0;font:bold 19px/16px Arial,sans-serif}
+#shutdown-window button{background:#d4d0c8;color:#111;border:2px outset #fff;border-radius:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+#shutdown-window button:active{border-style:inset}
+#shutdown-window button:focus-visible,#shutdown-action:focus-visible{outline:1px dotted #111;outline-offset:-5px}
+.shutdown-banner{display:flex;justify-content:center;align-items:center;gap:20px;background:linear-gradient(110deg,#fff,#ebedf3);margin-top:3px;padding:16px;color:#222}
+.shutdown-banner strong{display:block;font:28px Arial,sans-serif;letter-spacing:-1px}.shutdown-banner strong b{font-weight:400}.shutdown-banner small{display:block;font:12px Arial,sans-serif;letter-spacing:3px}
+.shutdown-flag{display:grid;grid-template-columns:17px 17px;gap:3px;transform:skewY(-10deg)}.shutdown-flag i{height:17px;background:#df5541}.shutdown-flag i:nth-child(2){background:#6b9e45}.shutdown-flag i:nth-child(3){background:#3d67bd}.shutdown-flag i:nth-child(4){background:#f0ca4b}
+#shutdown-form{padding:22px 20px 16px}#shutdown-action{display:block;width:100%;margin:12px 0 14px;padding:3px;background:#fff;color:#111;border:2px inset #eee;border-radius:0;font:13px Tahoma,Arial,sans-serif}
+#shutdown-description,#shutdown-help,#shutdown-status{font-size:12px;line-height:1.5;margin:0 0 18px}#shutdown-description{min-height:36px}
+.shutdown-actions{display:flex;justify-content:flex-end;gap:8px}.shutdown-actions button{min-width:74px;min-height:28px;font:12px Tahoma,Arial,sans-serif}
+#shutdown-window[aria-busy="true"] #shutdown-status{margin-top:12px}
+@media(pointer:coarse){.shutdown-actions button{min-height:38px}#shutdown-action{min-height:36px}}

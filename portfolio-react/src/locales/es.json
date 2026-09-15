@@ -1,7 +1,7 @@
 {
   "title": "Ingeniero de IA | Modelos fundacionales | Preentrenamiento y postentrenamiento",
   "about_me_h3": "Sobre Mí",
-  "about_me_p": "Soy Andrés Landazábal, ingeniero de sistemas e ingeniero de IA colombiano, radicado en Japón, con más de cinco años y medio de experiencia en la industria de TI. Aporto una visión de sistemas a la IA: comprender el modelo, construir el software que lo rodea y mantener el conjunto en funcionamiento.\n\nMi trayectoria en IA nace del machine learning y el deep learning. He entrenado modelos con aprendizaje supervisado, redes neuronales y arquitecturas Transformer, utilizando Python, NumPy, PyTorch y TensorFlow. Hoy aplico esas bases al preentrenamiento y postentrenamiento de modelos fundacionales, incluyendo LoRA, SFT, DPO y evaluación de modelos.\n\nConstruyo, despliego y mantengo sistemas de IA, conectando modelos con APIs, backends y aplicaciones web, con Docker y Kubernetes para su despliegue y operación. Me interesa entender por qué funciona un sistema, identificar dónde falla y mejorarlo con el tiempo. Para tu proyecto, eso significa contar con un ingeniero que puede trabajar en el modelo, su integración en una aplicación y su mantenimiento continuo.",
+  "about_me_p": "Soy Andrés Landazábal, ingeniero de sistemas e ingeniero de IA colombiano, radicado en Japón, con más de cinco años y medio de experiencia en la industria de TI. Aporto una visión de sistemas a la IA: comprender el modelo, construir el software que lo rodea y mantener el conjunto en funcionamiento.\n\nMi trayectoria en IA nace del machine learning y el deep learning. He entrenado modelos con aprendizaje supervisado, redes neuronales y arquitecturas Transformer, utilizando Python, NumPy, PyTorch y TensorFlow. También he entrenado modelos de imagen con mecanismos de atención, difusión y arquitecturas U-Net. Hoy aplico esas bases al preentrenamiento y postentrenamiento de modelos fundacionales, incluyendo LoRA, SFT, DPO y evaluación de modelos.\n\nConstruyo, despliego y mantengo sistemas de IA, conectando modelos con APIs, backends y aplicaciones web, con Docker y Kubernetes para su despliegue y operación. Me interesa entender por qué funciona un sistema, identificar dónde falla y mejorarlo con el tiempo. Para tu proyecto, eso significa contar con un ingeniero que puede trabajar en el modelo, su integración en una aplicación y su mantenimiento continuo.",
   "stack_h3": "Stack de IA e ingeniería",
   "languages_h3": "Idiomas",
   "projects_h3": "Proyectos fijados",
@@ -124,7 +124,7 @@
     "pipelineCaption": "Entrenamiento → evaluación → API",
     "moreProjects": "MÁS PROYECTOS DEL TALLER",
     "aboutHeadline": "Ingeniero de sistemas. Creador de IA.",
-    "aboutCopy": "Soy Andrés Landazábal, ingeniero de sistemas e ingeniero de IA colombiano, radicado en Japón, con más de cinco años y medio de experiencia en la industria de TI. Aporto una visión de sistemas a la IA: comprender el modelo, construir el software que lo rodea y mantener el conjunto en funcionamiento.\n\nMi trayectoria en IA nace del machine learning y el deep learning. He entrenado modelos con aprendizaje supervisado, redes neuronales y arquitecturas Transformer, utilizando Python, NumPy, PyTorch y TensorFlow. Hoy aplico esas bases al preentrenamiento y postentrenamiento de modelos fundacionales, incluyendo LoRA, SFT, DPO y evaluación de modelos.\n\nConstruyo, despliego y mantengo sistemas de IA, conectando modelos con APIs, backends y aplicaciones web, con Docker y Kubernetes para su despliegue y operación. Me interesa entender por qué funciona un sistema, identificar dónde falla y mejorarlo con el tiempo. Para tu proyecto, eso significa contar con un ingeniero que puede trabajar en el modelo, su integración en una aplicación y su mantenimiento continuo.",
+    "aboutCopy": "Soy Andrés Landazábal, ingeniero de sistemas e ingeniero de IA colombiano, radicado en Japón, con más de cinco años y medio de experiencia en la industria de TI. Aporto una visión de sistemas a la IA: comprender el modelo, construir el software que lo rodea y mantener el conjunto en funcionamiento.\n\nMi trayectoria en IA nace del machine learning y el deep learning. He entrenado modelos con aprendizaje supervisado, redes neuronales y arquitecturas Transformer, utilizando Python, NumPy, PyTorch y TensorFlow. También he entrenado modelos de imagen con mecanismos de atención, difusión y arquitecturas U-Net. Hoy aplico esas bases al preentrenamiento y postentrenamiento de modelos fundacionales, incluyendo LoRA, SFT, DPO y evaluación de modelos.\n\nConstruyo, despliego y mantengo sistemas de IA, conectando modelos con APIs, backends y aplicaciones web, con Docker y Kubernetes para su despliegue y operación. Me interesa entender por qué funciona un sistema, identificar dónde falla y mejorarlo con el tiempo. Para tu proyecto, eso significa contar con un ingeniero que puede trabajar en el modelo, su integración en una aplicación y su mantenimiento continuo.",
     "contactTitle": "¿Un problema que merece solución?",
     "contactPrompt": "Cuéntame qué quieres construir, en qué punto estás y con qué necesitas ayuda."
   },
@@ -136,11 +136,14 @@
     "groups": [
       {
         "title": "Machine learning y deep learning",
-        "description": "La base de mi trabajo en IA: aprender de los datos y entrenar redes neuronales para una tarea.",
+        "description": "La base de mi trabajo en IA: aprender de los datos y entrenar redes neuronales, incluidos modelos de imagen con mecanismos de atención, difusión y arquitecturas U-Net.",
         "items": [
           "Aprendizaje supervisado",
           "Redes neuronales",
-          "Arquitecturas Transformer"
+          "Arquitecturas Transformer",
+          "Mecanismos de atención",
+          "Modelos de difusión",
+          "Arquitecturas U-Net"
         ]
       },
       {

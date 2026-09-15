@@ -1,7 +1,7 @@
 {
   "title": "AI Engineer | Foundation Models | Pre-training & Post-training",
   "about_me_h3": "About Me",
-  "about_me_p": "I’m Andrés Landazábal, a Colombian systems engineer and AI engineer based in Japan, with more than five and a half years of experience in the IT industry. I bring a systems perspective to AI: understanding the model, building the software around it, and keeping the complete system working.\n\nMy AI background is rooted in machine learning and deep learning. I’ve trained models using supervised learning, neural networks, and Transformer architectures, working with Python, NumPy, PyTorch, and TensorFlow. Today, I apply that foundation to foundation-model pre-training and post-training, including LoRA, SFT, DPO, and model evaluation.\n\nI build, deploy, and maintain AI systems, connecting models to APIs, backends, and web applications, with Docker and Kubernetes supporting deployment and operation. I care about understanding why a system works, identifying where it fails, and improving it over time. For your project, that means an engineer who can work across model development, application integration, and ongoing maintenance.",
+  "about_me_p": "I’m Andrés Landazábal, a Colombian systems engineer and AI engineer based in Japan, with more than five and a half years of experience in the IT industry. I bring a systems perspective to AI: understanding the model, building the software around it, and keeping the complete system working.\n\nMy AI background is rooted in machine learning and deep learning. I’ve trained models using supervised learning, neural networks, and Transformer architectures, working with Python, NumPy, PyTorch, and TensorFlow. I’ve also trained image models using attention mechanisms, diffusion, and U-Net architectures. Today, I apply that foundation to foundation-model pre-training and post-training, including LoRA, SFT, DPO, and model evaluation.\n\nI build, deploy, and maintain AI systems, connecting models to APIs, backends, and web applications, with Docker and Kubernetes supporting deployment and operation. I care about understanding why a system works, identifying where it fails, and improving it over time. For your project, that means an engineer who can work across model development, application integration, and ongoing maintenance.",
   "stack_h3": "AI & Engineering Stack",
   "languages_h3": "Languages",
   "projects_h3": "Pinned Projects",
@@ -124,7 +124,7 @@
     "pipelineCaption": "Training → evaluation → serving",
     "moreProjects": "MORE FROM THE WORKBENCH",
     "aboutHeadline": "Systems engineer. AI builder.",
-    "aboutCopy": "I’m Andrés Landazábal, a Colombian systems engineer and AI engineer based in Japan, with more than five and a half years of experience in the IT industry. I bring a systems perspective to AI: understanding the model, building the software around it, and keeping the complete system working.\n\nMy AI background is rooted in machine learning and deep learning. I’ve trained models using supervised learning, neural networks, and Transformer architectures, working with Python, NumPy, PyTorch, and TensorFlow. Today, I apply that foundation to foundation-model pre-training and post-training, including LoRA, SFT, DPO, and model evaluation.\n\nI build, deploy, and maintain AI systems, connecting models to APIs, backends, and web applications, with Docker and Kubernetes supporting deployment and operation. I care about understanding why a system works, identifying where it fails, and improving it over time. For your project, that means an engineer who can work across model development, application integration, and ongoing maintenance.",
+    "aboutCopy": "I’m Andrés Landazábal, a Colombian systems engineer and AI engineer based in Japan, with more than five and a half years of experience in the IT industry. I bring a systems perspective to AI: understanding the model, building the software around it, and keeping the complete system working.\n\nMy AI background is rooted in machine learning and deep learning. I’ve trained models using supervised learning, neural networks, and Transformer architectures, working with Python, NumPy, PyTorch, and TensorFlow. I’ve also trained image models using attention mechanisms, diffusion, and U-Net architectures. Today, I apply that foundation to foundation-model pre-training and post-training, including LoRA, SFT, DPO, and model evaluation.\n\nI build, deploy, and maintain AI systems, connecting models to APIs, backends, and web applications, with Docker and Kubernetes supporting deployment and operation. I care about understanding why a system works, identifying where it fails, and improving it over time. For your project, that means an engineer who can work across model development, application integration, and ongoing maintenance.",
     "contactTitle": "Got a problem worth solving?",
     "contactPrompt": "Tell me what you want to build, where you are now, and what you need help with."
   },
@@ -136,11 +136,14 @@
     "groups": [
       {
         "title": "Machine learning & deep learning",
-        "description": "The foundation of my AI work: learning from data and training neural networks for a task.",
+        "description": "The foundation of my AI work: learning from data and training neural networks, including image models using attention mechanisms, diffusion, and U-Net architectures.",
         "items": [
           "Supervised learning",
           "Neural networks",
-          "Transformer architectures"
+          "Transformer architectures",
+          "Attention mechanisms",
+          "Diffusion models",
+          "U-Net architectures"
         ]
       },
       {

@@ -1,4 +1,3 @@
-import myCv from './assets/応募書類_Andres_Felipe_Landazabal.pdf';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -31,7 +30,7 @@ export default function App() {
         {[['en', 'EN'], ['es', 'ES'], ['ja', '日本語']].map(([lang, label]) => <button key={lang} lang={lang} className={`lang-btn retro-button ${currentLang === lang ? 'active' : ''}`} aria-pressed={currentLang === lang} onClick={() => i18n.changeLanguage(lang)}>{label}</button>)}
       </div>
     </header>
-    <PortraitHero cv={myCv} />
+    <PortraitHero />
     <div className="web-ribbon"><span>{t('sales.ribbon')}</span><span>{t('stack.lifecycle')}</span><span>{t('sales.ribbonEnd')}</span></div>
     <main className="main-container" id="portfolio">
       <section id="services" className="services-section">

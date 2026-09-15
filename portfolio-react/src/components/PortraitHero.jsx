@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { FiMessageSquare, FiFolder, FiDownload } from 'react-icons/fi';
+import { FiMessageSquare, FiFolder } from 'react-icons/fi';
+import { FaGithub } from 'react-icons/fa';
 import portrait from '../assets/andres-studio.jpg';
 
-export default function PortraitHero({ cv }) {
+export default function PortraitHero() {
   const { t } = useTranslation();
   return <section id="top" className="portfolio-hero">
     <div className="window-title"><span>▣ {t('sales.heroWindow')}</span><span aria-hidden="true">■</span></div>
@@ -17,7 +18,7 @@ export default function PortraitHero({ cv }) {
         <div className="portrait-actions">
           <a className="portrait-explore retro-button" href="https://x.com/andresflsxx" target="_blank" rel="noopener noreferrer"><FiMessageSquare aria-hidden="true" />{t('sales.discuss')}</a>
           <a className="hero-work-link retro-button" href="#projects"><FiFolder aria-hidden="true" />{t('sales.seeWork')}</a>
-          <a href={cv} download="応募書類_Andres_Felipe_Landazabal.pdf" className="cv-download-btn retro-button"><FiDownload aria-hidden="true" />{t('download_cv')}</a>
+          <a className="retro-button" href="https://github.com/andresfls-buc" target="_blank" rel="noopener noreferrer"><FaGithub aria-hidden="true" />GitHub</a>
         </div>
         <p className="hero-footnote">{t('sales.heroNote')}</p>
       </div>

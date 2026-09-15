@@ -333,3 +333,13 @@ nav { gap: 20px; }
   .contact-profile.retro-button { --button-x: 10px; --button-y: 12px; max-width: calc(100% - 28px); font-size: 12px; gap: 6px; }
 }
 @media(prefers-reduced-motion: reduce) { .retro-button { transition: none; } }
+
+/* Windows desktop colors with a restrained glass finish. */
+:root{--blue:#0a246a;--desktop:#3a6ea5;--accent:#d4d0c8;--accent-ink:#0a246a;--silver:#d4d0c8;--paper:#f6f6ef;--muted:#657071;color:#26384c}
+body{background-image:none}
+.window-title,.section-heading,.photo-title{background:linear-gradient(90deg,#0a246a,#6a99cf);color:#fff}
+.hero-toolbar{background:#d4d0c8}
+.retro-button{background:#d4d0c8}
+.portfolio{filter:blur(.25px) saturate(.92);text-shadow:0 0 .6px rgba(35,43,50,.28)}
+body::after{content:"";position:fixed;inset:0;z-index:1000;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' seed='1997' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23808080' filter='url(%23grain)' opacity='.045' d='M0 0h180v180H0z'/%3E%3C/svg%3E"),linear-gradient(125deg,rgba(237,218,177,.06),transparent 50%,rgba(30,39,53,.04)),radial-gradient(ellipse at 44% 42%,transparent 25%,rgba(12,16,22,.23) 100%)}
+@media(forced-colors:active){body::after{display:none}.portfolio{filter:none;text-shadow:none}}
